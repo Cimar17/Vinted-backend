@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 });
 
 // 🔴 9. 404 — Route inexistante
-app.all("*", (req, res) => {
+app.all("/*", (req, res) => {
   res.status(404).json({ message: "This route does not exist" });
 });
 
