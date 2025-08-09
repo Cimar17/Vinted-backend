@@ -39,6 +39,11 @@ app.get("/", (req, res) => {
   res.json({ message: "Bienvenue sur l’API Vinted 🧥" });
 });
 
+// 🔴 404 — Route inexistante
+app.all("*", (req, res) => {
+  res.status(404).json({ message: "This route does not exist" });
+});
+
 // 🟢 🌈  9. LANCEMENT DU SERVEUR
 const PORT = process.env.PORT || 3000; // <- fallback local
 app.listen(PORT, () => {
