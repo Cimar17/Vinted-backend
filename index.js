@@ -40,6 +40,7 @@ app.get("/", (req, res) => {
 });
 
 // 🟢 🌈  9. LANCEMENT DU SERVEUR
-app.listen(process.env.PORT, () => {
-  console.log("🚀 Server started on http://localhost:3000");
+const PORT = process.env.PORT || 3000; // <- fallback local
+app.listen(PORT, () => {
+  console.log(`🚀 Server started on port ${PORT}`);
 });
